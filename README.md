@@ -77,3 +77,10 @@ interaction.</br>
   > Neatly update the Verilog code in code style only.
 </details>
 
+
+<!--Sixth Section-->
+## References
+<details>
+ <summary>Click To See</summary>
+</details>
+
