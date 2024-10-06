@@ -58,7 +58,7 @@ interaction.</br>
 <details>
   <summary>Detail</summary>
 
-  > Explain the working of your model with the help of a functional table (compulsory) followed by the flowchart.
+  > ![image](https://github.com/Devchaudhari1/S2-T17/blob/main/Digital%20dartboard%20game.png)
 </details>
 
 <!-- Fourth Section -->
