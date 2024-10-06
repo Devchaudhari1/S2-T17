@@ -82,5 +82,12 @@ interaction.</br>
 ## References
 <details>
  <summary>Detail</summary>
-</details>
 
+• [?]articlezhang2006digital, title=Digital anti-windup PI controllers for variable-speed motor
+drives using FPGA and stochastic theory, author=Zhang, Dai and Li, Hui and Collins, Em-
+manuel G, journal=IEEE Transactions on power electronics, volume=21, number=5, pages=1496–
+1501, year=2006, publisher=IEEE</br>
+• [?]articleparma2007real, title=Real-time digital hardware simulation of power electronics and
+drives, author=Parma, Gustavo G and Dinavahi, Venkata, journal=IEEE Transactions on
+Power Delivery, volume=22, number=2, pages=1235–1246, year=2007, publisher=IEEE</br>
+</details>
