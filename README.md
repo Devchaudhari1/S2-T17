@@ -81,6 +81,6 @@ interaction.</br>
 <!--Sixth Section-->
 ## References
 <details>
- <summary>Click To See</summary>
+ <summary>Detail</summary>
 </details>
 
