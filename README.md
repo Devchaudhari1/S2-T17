@@ -58,7 +58,7 @@ interaction.</br>
 <details>
   <summary>Detail</summary>
 
-  > ![image](https://github.com/Devchaudhari1/S2-T17/blob/main/Digital%20dartboard%20game.png)
+  > ![image](https://github.com/Devchaudhari1/S2-T17/blob/main/Digital%20dartboard%20game%20modularized.drawio.png)
 </details>
 
 <!-- Fourth Section -->
