@@ -65,7 +65,7 @@ interaction.</br>
 ## Logisim Circuit Diagram
 <details>
   <summary>Detail</summary>
-  > ![image](      https://github.com/Devchaudhari1/S2-T17/blob/main/S2_T17.png)
+  > ![image](https://github.com/Devchaudhari1/S2-T17/blob/main/S2_T17.png)
       https://github.com/Devchaudhari1/S2-T17/blob/main/S2_T17.png
   > Update a neat logisim circuit diagram
 </details>
