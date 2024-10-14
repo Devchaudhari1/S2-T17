@@ -74,6 +74,10 @@ Main Module
   >![S2_T17mainModule](https://github.com/user-attachments/assets/b9357933-9df0-4d41-a17d-bcc7260730eb)
   PRBS Flux Module
   >![S2_T17_PRBSflux](https://github.com/user-attachments/assets/a9527ad6-64ba-48e7-8829-2cc91ac879ce)
+  
+  Truth Table For Points Awarded Per Throw
+
+  > ![S2_T17_truthtable](https://github.com/user-attachments/assets/e097b109-b863-4d5a-9b9c-c8e492875117)
 
 
 </details>
