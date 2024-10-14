@@ -91,7 +91,7 @@ Main Module
 <details>
   <summary>Detail</summary>
 Verilog main module code :
-
+<code>
 module digital_dart_game (
     input clk,
     input reset,
@@ -159,10 +159,11 @@ module digital_dart_game (
     assign final_score = total_score;
 
 endmodule
+</code>
 
 
  Verilog testbench code 
-
+<code>
 `include "S2_T17.v"
 module tb_digital_dart_game;
     reg clk;
@@ -215,6 +216,7 @@ module tb_digital_dart_game;
                  $time, player_id, score_display, final_score);
     end
 endmodule
+</code>
 </details>
 
 
