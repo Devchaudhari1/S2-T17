@@ -81,6 +81,7 @@ Main Module
 
    State Equations For Concentric Circles Lit By LEDs
   >![S2_T17_stateEquation](https://github.com/user-attachments/assets/e9f7804b-ed91-4b0f-a9e4-05b82f8c3b84)
+  >![S2_T17_stateEquationfootnote](https://github.com/user-attachments/assets/9e5105a2-dda6-4ca2-baa4-bbf8127eefd0)
 
 
 </details>
