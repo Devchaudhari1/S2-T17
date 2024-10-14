@@ -79,6 +79,9 @@ Main Module
 
   > ![S2_T17_truthtable](https://github.com/user-attachments/assets/e097b109-b863-4d5a-9b9c-c8e492875117)
 
+   State Equations For Concentric Circles Lit By LEDs
+  >![S2_T17_stateEquation](https://github.com/user-attachments/assets/e9f7804b-ed91-4b0f-a9e4-05b82f8c3b84)
+
 
 </details>
 
