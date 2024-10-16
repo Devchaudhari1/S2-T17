@@ -71,10 +71,14 @@ interaction.</br>
   
 Main Module
 
-  >![S2_T17mainModule](https://github.com/user-attachments/assets/b9357933-9df0-4d41-a17d-bcc7260730eb)
+  >![Maindigitaldartgame](https://github.com/user-attachments/assets/16a7bc57-4218-4f0d-aa8a-b614f975afd8)
+
   PRBS Flux Module
-  >![S2_T17_PRBSflux](https://github.com/user-attachments/assets/a9527ad6-64ba-48e7-8829-2cc91ac879ce)
-  
+  >
+  ![PRBS Flux](https://github.com/user-attachments/assets/575946f7-9059-4f13-b150-0e8fa9f82b0a)
+Final Score Comparator
+  >![Final Score Comparator](https://github.com/user-attachments/assets/7a6e533e-e9ea-42f4-aa6e-1d4baf31d736)
+
   Truth Table For Points Awarded Per Throw
 
   > ![S2_T17_truthtable](https://github.com/user-attachments/assets/e097b109-b863-4d5a-9b9c-c8e492875117)
