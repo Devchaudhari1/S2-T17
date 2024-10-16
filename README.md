@@ -1,4 +1,4 @@
-# S2-T17 </br>Digital dart board game with speed controller and scoreboard
+# </br>Digital dart board game with speed controller and scoreboard
 <!-- First Section -->
 ## Team Details
 S2 T17
