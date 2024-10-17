@@ -102,65 +102,67 @@ module digital_dart_game (
     input throw_button,
     output [2:0] player_id,
     output [4:0] score_display,
-    output [4:0] final_score
+    output [4:0] final_score,
+    output [4:0] winner
 );
+wire [4:0] circle_points;  // Randomly generated points for each throw
+reg [4:0] player_score[0:2]; // Array to store total scores for Player 1, 2, 3
+reg [2:0] player_turn;      // Current player's turn (0 for Player 1, 1 for Player 2, 2 for Player 3)
+reg [2:0] throw_count;      // Throw count for each player
+reg [4:0] prbs;             // PRBS for generating random values
 
-    wire [4:0] circle_points;  // Randomly generated points for each throw
-    reg [4:0] player_score[0:2]; // Array to store total scores for Player 1, 2, 3
-    reg [2:0] player_turn;      // Current player's turn (0 for Player 1, 1 for Player 2, 2 for Player 3)
-    reg [2:0] throw_count;      // Throw count for each player
-    reg [4:0] prbs;             // PRBS for generating random values
+// Random number generator using LFSR for circle points
+always @(posedge clk or posedge reset) begin
+    if (reset)
+        prbs <= 5'b10101;  // Initialize PRBS with a seed value
+    else
+        prbs <= {prbs[3:0], prbs[4] ^ prbs[2]};  // Generate new PRBS value
+end
 
-    // Random number generator using LFSR for circle points
-    always @(posedge clk or posedge reset) begin
-        if (reset)
-            prbs <= 5'b10101;  // Initialize PRBS with a seed value
-        else
-            prbs <= {prbs[3:0], prbs[4] ^ prbs[2]};  // Generate new PRBS value
-    end
+// Circle points assignment based on PRBS value using gates
+assign circle_points = (prbs[2:0] == 3'b000) ? 5 :
+                       (prbs[2:0] == 3'b001) ? 4 :
+                       (prbs[2:0] == 3'b010) ? 3 :
+                       (prbs[2:0] == 3'b011) ? 2 :
+                       (prbs[2:0] == 3'b100) ? 1 : 0;
 
-    // Circle points assignment based on PRBS value using gates
-    assign circle_points = (prbs[2:0] == 3'b000) ? 5 :
-                           (prbs[2:0] == 3'b001) ? 4 :
-                           (prbs[2:0] == 3'b010) ? 3 :
-                           (prbs[2:0] == 3'b011) ? 2 :
-                           (prbs[2:0] == 3'b100) ? 1 : 0;
+// Logic for scoring and changing turns using gates
+always @(posedge clk or posedge reset) begin
+    if (reset) begin
+        player_score[0] <= 0;
+        player_score[1] <= 0;
+        player_score[2] <= 0;
+        player_turn <= 0;
+        throw_count <= 0;
+    end else if (throw_button) begin
+        // Add points to the current player's score
+        player_score[player_turn] <= player_score[player_turn] + circle_points;
+        throw_count <= throw_count + 1;
 
-    // Logic for scoring and changing turns using gates
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
-            player_score[0] <= 0;
-            player_score[1] <= 0;
-            player_score[2] <= 0;
-            player_turn <= 0;
+        // Change player's turn after 5 throws
+        if (throw_count == 4) begin
             throw_count <= 0;
-        end else if (throw_button) begin
-            // Add points to the current player's score
-            player_score[player_turn] <= player_score[player_turn] + circle_points;
-            throw_count <= throw_count + 1;
-
-            // Change player's turn after 5 throws
-            if (throw_count == 4) begin
-                throw_count <= 0;
-                player_turn <= player_turn + 1;
-            end
-
-            // Reset to Player 1 after Player 3's turn
-            if (player_turn == 3)
-                player_turn <= 0;
+            player_turn <= player_turn + 1;
         end
+
+        // Reset to Player 1 after Player 3's turn
+        if (player_turn == 3)
+            player_turn <= 0;
     end
+end
 
-    // Calculate the final score as the sum of all player scores
-    wire [4:0] sum1, sum2, total_score;
-    assign sum1 = player_score[0] + player_score[1]; // Sum of scores of Player 1 and Player 2
-    assign sum2 = sum1 + player_score[2];            // Sum of Player 1, Player 2, and Player 3
-    assign total_score = (sum2 > 0) ? sum2 : 1;      // Ensure non-zero final score if sum is zero
-
-    // Assign output signals
-    assign player_id = player_turn + 1;
-    assign score_display = player_score[player_turn];
-    assign final_score = total_score;
+// Calculate the final score as the sum of all player scores
+wire [4:0] sum1, sum2, total_score, winner;
+assign sum1 = player_score[0] + player_score[1]; // Sum of scores of Player 1 and Player 2
+assign sum2 = sum1 + player_score[2];            // Sum of Player 1, Player 2, and Player 3
+assign total_score = (player_score[0] > player_score[1]) ? player_score[0] : (player_score[1]>player_score[2])?player_score[1] : player_score[2];      // Ensure non-zero final score if sum is zero
+assign winner = (player_score[0] > player_score[1]) ? 1 : (player_score[1]>player_score[2])?2 : 3;  
+// Assign output signals
+assign player_id = player_turn + 1;
+assign score_display = player_score[player_turn];
+assign final_score = total_score;
+    
+  
 
 endmodule
 </code>
@@ -170,55 +172,60 @@ endmodule
 <code>
 `include "S2_T17.v"
 module tb_digital_dart_game;
-    reg clk;
-    reg reset;
-    reg throw_button;
-    wire [2:0] player_id;
-    wire [4:0] score_display;
-    wire [4:0] final_score;
+reg clk;
+reg reset;
+reg throw_button;
+wire [2:0] player_id;
+wire [4:0] score_display;
+wire [4:0] winning_score;
+wire [4:0] winner;
 
-    // Instantiate the game module
-    digital_dart_game uut (
-        .clk(clk),
-        .reset(reset),
-        .throw_button(throw_button),
-        .player_id(player_id),
-        .score_display(score_display),
-        .final_score(final_score)
-    );
+// Instantiate the game module
+digital_dart_game uut (
+    .clk(clk),
+    .reset(reset),
+    .throw_button(throw_button),
+    .player_id(player_id),
+    .score_display(score_display),
+    .final_score(winning_score),.winner(winner)
+);
 
-    // Clock generation
-    initial begin
-        clk = 0;
-        forever #5 clk = ~clk; // 10 time units period
-    end
+// Clock generation
+initial begin
+    clk = 0;
+    forever #5 clk = ~clk; // 10 time units period
+end
 
-    // Simulation logic
-    initial begin
-        // Reset and initialize
-        reset = 1;
-        throw_button = 0;
-        #10 reset = 0;
+// Simulation logic
+initial begin
+    // Reset and initialize
+    reset = 1;
+    throw_button = 0;
+    #10 reset = 0;
 
-        // Simulate throws for each player
-        repeat (3) begin
-            for (integer i = 0; i < 5; i = i + 1) begin
-                throw_button = 1;
-                #10 throw_button = 0;
-                #20;
-            end
+    // Simulate throws for each player
+    repeat (3) begin
+        for (integer i = 0; i < 5; i = i + 1) begin
+            throw_button = 1;
+            #10 throw_button = 0;
+            #20;
         end
-
-        // End simulation
-        #100;
-        $finish;
     end
 
-    // Monitor the outputs
-    initial begin
-        $monitor("Time: %0t | Player ID: %0d | Player Score: %0d | Final Score: %0d",
-                 $time, player_id, score_display, final_score);
-    end
+    // End simulation
+    #100;
+    $finish;
+end
+
+// Monitor the outputs
+initial begin
+    $monitor("Time: %0t | Player ID: %0d | Player Score: %0d | Winning Score: %0d | Winner: %0d",
+             $time, player_id, score_display, winning_score,winner);
+end
+
+    
+  
+
 endmodule
 </code>
 </details>
