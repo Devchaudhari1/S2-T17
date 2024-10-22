@@ -23,7 +23,7 @@
 <details>
   <summary>Detail</summary>
   
-Motivation: 
+1. Motivation: 
 
 > A dart board game is not only a fun way to pass the time but also serves
 as an engaging tool to develop various skills in individuals. The implementation of a Finite
@@ -35,22 +35,23 @@ incorporating features like speed control and a dynamic scoreboard, players can 
 their scores while experiencing a customizable level of challenge as the game progresses. This
 adaptability adds an exciting layer of suspense and engagement to each round!</br>
 
-Problem Statement:
-> • The system must accept input signals that accurately represent dart throws on a virtual
+2. Problem Statement:
+> •   The system must accept input signals that accurately represent dart throws on a virtual
 dartboard.</br>
-• The dartboard must feature a sufficiently large number of distinct target regions, with
+•   The dartboard must feature a sufficiently large number of distinct target regions, with
 the bullseye being the most challenging to hit.</br>
-• Additionally, the game should introduce variations to increase difficulty, ensuring a stim-
+•   Additionally, the game should introduce variations to increase difficulty, ensuring a stim-
 ulating experience for players.</br>
-• The scoreboard must effectively record game points over a wide range, avoiding overflow
+•   The scoreboard must effectively record game points over a wide range, avoiding overflow
 to accommodate prolonged game play .</br>
-• The overall objective is to develop a digital dart game that is both entertaining and
+•   The overall objective is to develop a digital dart game that is both entertaining and
 capable of accommodating multiple players while providing an intuitive and responsive
 game play experience.</br>
-3. Features:</br>• The dartboard utilizes an input signal from a dart throw, represented as a time-varying
+3. Features:</br>
+> •   The dartboard utilizes an input signal from a dart throw, represented as a time-varying
 pointer that periodically navigates among four concentric target regions, illuminated by
 LEDs to indicate the pointer’s position.</br>
-• The scoreboard can accurately record at least 20 throws without risk of overflow, ensuring
+•   The scoreboard can accurately record at least 20 throws without risk of overflow, ensuring
 comprehensive tracking of player performance.</br>
 • The dartboard includes a variable speed controller, allowing players to adjust the speed
 at which the pointer changes position, enhancing the challenge.</br>
