@@ -20,7 +20,10 @@ S2 T17
 ## Abstract
 <details>
   <summary>Detail</summary>
- 1. Motivation: A dart board game is not only a fun way to pass the time but also serves
+  
+Motivation: 
+
+> A dart board game is not only a fun way to pass the time but also serves
 as an engaging tool to develop various skills in individuals. The implementation of a Finite
 State Machine (FSM)1 in the digital dart game serves as a robust framework to manage the
 various states of gameplay efficiently. This game emphasizes precision and timing, making
@@ -29,8 +32,9 @@ aim to create a digital version of the classic dart game using innovative digita
 incorporating features like speed control and a dynamic scoreboard, players can easily track
 their scores while experiencing a customizable level of challenge as the game progresses. This
 adaptability adds an exciting layer of suspense and engagement to each round!</br>
-2. Problem Statement:</br>
-• The system must accept input signals that accurately represent dart throws on a virtual
+
+Problem Statement:
+> • The system must accept input signals that accurately represent dart throws on a virtual
 dartboard.</br>
 • The dartboard must feature a sufficiently large number of distinct target regions, with
 the bullseye being the most challenging to hit.</br>
