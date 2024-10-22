@@ -27,7 +27,7 @@
 
 ## 1. Motivation
 
-A dartboard game is not only a fun way to pass the time but also serves as an engaging tool to develop various skills in individuals. The implementation of a Finite State Machine (FSM) in the digital dart game provides a robust framework to manage the various states of gameplay efficiently. This game emphasizes precision and timing, making it an excellent way to enhance focus and hand-eye coordination. Through this project, we aim to create a digital version of the classic dart game using innovative digital circuits. By incorporating features like speed control and a dynamic scoreboard, players can easily track their scores while experiencing a customizable level of challenge as the game progresses. This adaptability adds an exciting layer of suspense and engagement to each round!
+A dartboard game is not only a fun way to pass the time but also serves as an engaging tool to develop various skills in individuals. The implementation of a Finite State Machine (FSM) in the digital dart game provides a robust framework to manage the various states of gameplay efficiently. This game emphasizes precision and timing, making it an excellent way to enhance focus and hand-eye coordination. </br></br>Through this project, we aim to create a digital version of the classic dart game using innovative digital circuits. By incorporating features like speed control and a dynamic scoreboard, players can easily track their scores while experiencing a customizable level of challenge as the game progresses. This adaptability adds an exciting layer of suspense and engagement to each round!
 
 ---
 
