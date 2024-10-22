@@ -1,9 +1,11 @@
 # </br>Digital dart board game with speed controller and scoreboard
 <!-- First Section -->
 ## Team Details
-S2 T17
+
 <details>
   <summary>Detail</summary>
+
+  >S2 T17
 
   > Semester: 3rd Sem B. Tech. CSE
 
