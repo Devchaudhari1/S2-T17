@@ -254,11 +254,14 @@ endmodule
 
   <summary><strong>Visuals of Implementation</strong></summary><br>
 
-  ![PRBS Module Details](prbs_module.png)
-  *Figure 1: PRBS Module Details*
+ 
+https://github.com/Devchaudhari1/S2-T17/blob/main/Snapshots/PRBS%20Module(hardware).png
 
-  ![5-Bit BCD Adder Circuit](5_bit_bcd_adder.png)
-  *Figure 2: 5-Bit BCD Adder Circuit*
+ 
+https://github.com/Devchaudhari1/S2-T17/blob/main/Snapshots/5%20bit%20bcd%20adder(hardware).png 
+
+https://github.com/Devchaudhari1/S2-T17/blob/main/Snapshots/Achievement%20Unlocked%20Module(hardware).png    
+
 
 </details>
 
