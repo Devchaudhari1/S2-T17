@@ -235,9 +235,9 @@ endmodule
 
 
 <details>
-  <summary><strong>Salient Features</strong></summary>
+  <summary><strong>Salient Features</strong></summary><br>
 
-  <summary><strong>PRBS Generator for Dartboard Patterns</strong></summary>
+  <summary><strong>PRBS Generator for Dartboard Patterns</strong></summary><br>
 
   The project involves the implementation of a **Pseudo-Random Bit Sequence (PRBS)** generator using **7474 D-type flip-flops** and **7486 XOR gates**. The PRBS generator produces a 15-bit sequence that controls the **dartboard patterns** displayed on a series of LEDs. The design employs a **Linear Feedback Shift Register (LFSR)** configuration, where the flip-flops store and shift binary data, and the XOR gates provide feedback to generate the random sequence. This sequence is then used to control the dynamic lighting of the dartboard, simulating random dart throws.
 
@@ -246,13 +246,13 @@ endmodule
   This implementation showcases the use of basic digital logic components to generate pseudo-random sequences, offering a cost-effective and reliable solution for creating random patterns in visual applications such as a dartboard simulation.
 
 
-  <summary><strong>5-Bit BCD Address Logic Using 7483 ICs</strong></summary>
+  <summary><strong>5-Bit BCD Address Logic Using 7483 ICs</strong></summary><br>
 
   The project utilizes a **5-bit BCD address** generated and maintained using **three 7483 4-bit binary full adder ICs**. Each IC handles the addition of BCD digits, ensuring the address remains within the valid range of 0 to 31 (decimal). The first two ICs handle the primary 4-bit BCD values, while the third IC manages carry propagation and overflow. This logic guarantees that the system can dynamically generate addresses for controlling various dartboard patterns.
 
   The carry-out from one IC feeds into the next, allowing for accurate address calculation and sequencing across the 5-bit range. This efficient address logic ensures smooth and reliable dartboard pattern control.
 
-  <summary><strong>Visuals of Implementation</strong></summary>
+  <summary><strong>Visuals of Implementation</strong></summary><br>
 
   ![PRBS Module Details](prbs_module.png)
   *Figure 1: PRBS Module Details*
